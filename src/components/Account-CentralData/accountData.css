@@ -1,0 +1,45 @@
+.accountDataSection{
+    align-items: center;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto 2rem;
+    background-color: white;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px;
+    color: #2c3e50;
+}
+
+.viewAllTransactions {
+    background-color: #00bc77;
+    border-color: #00bc77;
+    color: #fff;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 8px;
+}
+
+.accountBalance {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.accountDescription{
+    margin: 0;
+}
+
+@media screen and (max-width: 560px) {
+    .accountDataSection {
+        flex-direction: column;
+        padding: 5px;
+    }
+    .generalDataUser h1{
+        font-size: 26px;
+    }
+  }

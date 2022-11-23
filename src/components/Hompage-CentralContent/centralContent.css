@@ -1,0 +1,29 @@
+.AB-Features{
+    display: flex;
+    text-align: center;
+}
+
+.AB-Features .centralContentData {
+    padding:35px;
+}
+
+.AB-Features .centralContentData img {
+    width: 110px;
+    border:10px solid #00bc77;
+    border-radius: 100%;
+}
+
+.AB-Features .centralContentData h3 {
+    font-size: 20px;
+}
+
+.AB-Features .centralContentData span {
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 975px) {
+    .AB-Features {
+        flex-direction: column;
+    }
+}

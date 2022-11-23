@@ -1,0 +1,59 @@
+.HeadBanner{
+    background-image: url("../../assets/tree-coin-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 -100px;
+    position: relative;
+    height: 400px;
+}
+
+.main-content{
+    background: white;
+    position: relative;
+    top: 2rem;
+    width: 320px;
+    padding: 2rem;
+    text-align: left;
+    left: 68%;
+}
+
+.sub{
+    font-weight: 700;
+    margin: 0;
+    font-size: 25px;
+    color: rgb(44, 43, 43);
+}
+
+
+@media screen and (max-width: 1250px) {
+    .main-content {
+        left: 50%;
+        right: 50%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .main-content {
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .HeadBanner {
+        background-position: 0 -50px;
+        height: 350px;
+    }
+    .main-content{
+        width: 220px;
+    }
+    .sub {
+        font-size: 20px;
+    }
+    .add {
+        font-size: 16px;
+    }
+}
+
+

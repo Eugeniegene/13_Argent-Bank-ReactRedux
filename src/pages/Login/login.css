@@ -1,0 +1,47 @@
+.login-container {
+    background-color: #12002b;
+    height: 710px;
+    margin-bottom: -50px;
+}
+
+.form-wrapper {
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 45px auto 0;
+    padding: 30px;
+    width: 300px;
+    top: 5%;
+    position: relative;
+}
+
+.formHeader {
+    text-align: center;
+}
+
+.input-wrapper label {
+    padding-bottom: 5px;
+}
+.input-wrapper {
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
+.input-wrapper input {
+    font-size: 15px;
+    width: 97%;
+    padding-top: 11px;
+    margin-top: 5px;
+}
+
+form button {
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #00bc77;
+    border-color: #00bc77;
+    color: #fff;
+    display: block;
+    margin-top: 16px;
+    padding: 8px;
+    width: 100%;
+}
+

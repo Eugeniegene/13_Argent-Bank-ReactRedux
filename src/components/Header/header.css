@@ -1,0 +1,30 @@
+.header-bloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+.logo {
+    max-width: 100%;
+    width: 200px;
+}
+
+.notConnected{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    align-items: center;
+    color: rgb(43, 43, 43);
+    font-weight: bolder;
+}
+
+.connected {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-2x {
+    margin-right: 5px;
+}
