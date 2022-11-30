@@ -9,6 +9,16 @@ Projet 13 -  Utilisez une API pour un compte utilisateur bancaire avec React
 - CSS 3 
 - React Redux
 
+## Ressources provided : 
+
+### Wireframes
+![image](https://user-images.githubusercontent.com/97299297/204765264-b585e7f6-a203-497b-a688-086d7558d2d3.png)
+![image](https://user-images.githubusercontent.com/97299297/204765528-5dcccb2e-fc98-44f4-a046-a29955fb8da5.png)
+
+### Static code 
+
+The static code is available here : https://github.com/Eugeniegene/P13-Bank-API-07112022/tree/master/designs
+
 ## How to install ? 
 
 ### Prequisites 
