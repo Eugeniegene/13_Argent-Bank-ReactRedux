@@ -1,0 +1,127 @@
+swagger: '2.0'
+info:
+  title: Bank Argent API documentation
+  description: Contains all available API endpoints in this codebase
+  version: '1.0.0'
+  termsOfService: 'http://swagger.io/terms/'
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /profile/:accountId/transactions:
+  get:
+      security:
+        - Bearer: []
+      tags:
+        - Transactions Module
+      summary: Transactions
+      description: Trasaction API proposition
+      parameters:
+        - in: header
+          type: string
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transactions successfully submitted ! 
+          schema:
+            $ref: '#/definitions/TransactionsResponse'
+        '400':
+          description: Invalid input. Please try again. 
+        '500':
+          description: Server Error. Please try again.
+    /account/:accountId/transaction:
+      get:
+          security:
+            - Bearer: []
+          tags:
+            - Transactions Module
+          summary: Transaction
+          description: API for Transaction
+          parameters:
+            - in: header
+              type: string
+              name: Authorization
+              description: Attach Bearer JWT token
+              required: true
+            - in: path
+              type: number
+              name: id
+              description: Transaction id 
+              required: true
+          produces:
+            - application/json
+          responses:
+            '200':
+              description: Transactions successfully submitted ! 
+              schema:
+                $ref: '#/definitions/TransactionResponse'
+            '400':
+              description: Invalid input. Please try again. 
+            '500':
+              description: Server Error. Please try again.
+      put:
+          security:
+            - Bearer: []
+          tags:
+            - Transactions Module
+          summary: Transaction
+          description: API for Transaction
+          parameters:
+            - in: header
+              type: string
+              name: Authorization
+              description: Attach Bearer JWT token
+              required: true
+            - in: body
+              name: Transaction
+              description: Transaction changement
+              required: true
+              schema:
+                $ref: '#/definitions/TransactionResponse'
+          produces:
+            - application/json
+          responses:
+            '200':
+              description: Transactions successfully submitted !
+              schema:
+                $ref: '#/definitions/TransactionResponse'
+            '400':
+              description: Invalid input. Please try again. 
+            '500':
+              description: Server Error. Please try again.
+              
+  securityDefinitions:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header
+  definitions:
+    TransactionsResponse:
+      type: object
+      properties:
+        id:
+          type: number
+        date:
+          type: string
+        description:
+          type: string
+        amount:
+          type: number
+        balance:
+          type: number
+    TransactionResponse:
+      type: object
+      properties:
+        id:
+          type: number
+        TransactionType:
+          type: string
+        Category:
+          type: string
+        Notes:
+          type: string
