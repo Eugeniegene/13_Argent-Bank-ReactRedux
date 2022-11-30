@@ -1,15 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import profileActionReducer from './userFeatures/userData.js'
-import isUserLoggedInActionReducer from "./userFeatures/userLoggedIn.js"
-import errorUserLoginActionReducer from "./userFeatures/errorUserData.js"
+import { userDataReducer } from './user/userReducer.js'
+
+/**
+ * gets all the data in the reducer.
+ */
 
 const store = configureStore({
-  reducer: {
-    profileAction: profileActionReducer,
-    isUserLoggedInAction: isUserLoggedInActionReducer,
-    errorUserLoginAction: errorUserLoginActionReducer
+  reducer:{
+    userData:userDataReducer
   }
 })
-
 export default store

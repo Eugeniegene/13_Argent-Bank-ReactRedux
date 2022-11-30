@@ -6,7 +6,9 @@ import "./accountData.css"
  * @param {String} titre allows a better view on the title of the account
  * @param {String} montant allows a better view on the amount of the account
  * @param {String} description allows a better view on the description of the account
- * @component
+ * 
+ * component used ONLY on the profile page. A non-connected user will not have access to this data.
+ * @component 
  */
 function AccountData ({ title, amount, description }) {
   return (

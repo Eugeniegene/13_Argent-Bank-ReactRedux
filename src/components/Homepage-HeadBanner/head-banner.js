@@ -2,6 +2,10 @@ import React from "react"
 
 import "./head-banner.css"
 
+/**
+ * creates the general banner containing
+ * adds regarding the banks perks.
+ */
 const HeadBanner = () => {
     return (
         <div className="HeadBanner">

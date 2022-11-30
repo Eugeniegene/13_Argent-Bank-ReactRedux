@@ -1,59 +1,74 @@
-import React from 'react'
-import { Navigate } from 'react-router' 
-import { useSelector } from 'react-redux'
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginAction } from '../../redux/user/userActions'
+import { useNavigate } from 'react-router'
 
-import {getUserLoginData} from '../../services/getAllUserData.js'
-
-import { isUserLoggedInSelector } from '../../redux/featuresSelector.js'
 import './login.css'
 
-const Login = () => {
-    const [signInUser, setSignInUser] = useState({ email: '', password: '' })
+/**
+ * Creates the login page.
+ * Login form is integrated inside this page. 
+ * LOGIN CONDITIONS :
+ * The user must enter one of the two email adresses and passwords to access their profile. 
+ * user1 - TONY STARK , email : tony@stark.com , password : password123;
+ * user2 - STEVE ROGERS , email : steve@rogers.com , password : password456.
+ * If the user is not found, or an error occured, an error message will appear. 
+ * If the user is connected, they will get their token and will be redirected to their profile. 
+ * @component
+ */
 
-    const dataInputChange = (e) => {
-      e.persist()
-      const { name, value } = e.target
-      setSignInUser((state) => ({...state, [name]: value}))
+const Login = () => {
+  const dispatch = useDispatch()
+  let navigate = useNavigate()
+
+  const { error } = useSelector((state) => state.userData)
+  const { token } = useSelector((state) => state.userData)
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const submitForm = (e) => {
+    e.preventDefault()
+    dispatch(loginAction(email, password))
+  }
+
+  useEffect(() => {
+    if (token) {
+      navigate('/profile')
     }
-  
-    const formData = (e) => {
-      e.preventDefault()
-      if (!signInUser.email && !signInUser.password === "") alert ('Please, enter your email and password.')
-      if (!signInUser.email || !signInUser.password ) alert("Invalid entry. Please try again.")
-      getUserLoginData(signInUser.email, signInUser.password)
-    }
-    
-    const isUserLoggedIn = useSelector(isUserLoggedInSelector)
-    if (isUserLoggedIn) {
-      return <Navigate to='/profile' />
-    }
-    return (
-      <main className='login-container'>
-        <section className='form-wrapper'>
-          <div className='formHeader'>
-            <i className='fa fa-user-circle fa-4x sign-in-icon' />
-            <h1> Sign In </h1>
+  }, [token, navigate])
+
+  return (
+    <main className='login-container'>
+      <section className="form-wrapper">
+        <div className='formHeader'>
+          <i className="fa fa-user-circle fa-4x sign-in-icon"></i>
+          <h1>Sign In</h1>
+        </div>
+        <form onSubmit={submitForm}>
+          <div className="input-wrapper">
+            <label htmlFor="username">Username</label>
+            <input type="text" id='email' autoComplete='username' required placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
-          <form onSubmit={formData}>
-              <div className='input-wrapper'>
-                  <label htmlFor='username'>Username</label>
-                  <input type='text' list='usernames' id='email' required placeholder='Email' onChange={dataInputChange} autoComplete='username' />
-              </div>
-              <div className='input-wrapper'>
-                  <label htmlFor='password'>Password</label>
-                  <input type='password' id='password' required placeholder='Password' onChange={dataInputChange} autoComplete='current-password'/>
-              </div>
-              <div className='input-remember'>
-                  <input type='checkbox' id='rememberMe' />
-                  <label htmlFor='rememberMe'>Remember me</label>
-              </div>
-              <button
-                  className='sign-in-button'> Sign In
-              </button>
-          </form>
-        </section>
-      </main>
-    )
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input type="password" id='password' autoComplete='current-password' required placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+          <div className="input-remember">
+            <input type="checkbox" id="rememberMe" />
+            <label htmlFor="rememberMe">Remember me</label>
+          </div>
+          <button className="signInButton" type="submit" name="Login"> Sign In </button>
+          {error && (
+            <div>
+              <br />
+              {error}
+            </div>
+            )
+          }
+        </form>
+      </section>
+    </main>
+  )
 }
 export default Login

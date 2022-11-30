@@ -2,6 +2,11 @@ import React from "react"
 
 import "./footer.css"
 
+/**
+ * creates an footer element
+ * @component
+ */
+
 const Footer = () => {
   return (
     <footer className="footer">

@@ -6,6 +6,13 @@ import chatIcon from "../../assets/icon-livechat.png"
 import moneyIcon from "../../assets/icon-money.png"
 import securityIcon from "../../assets/icon-security.png"
 
+/**
+ * Creates the Homepage structure
+ * It contains the headbanner (adds in a white rectangles on the right side of the screen, center on mobile format),
+ * and general data (center line on desktop, column center on mobile), containing icons, titles and description. 
+ * @component
+ */
+
 const Homepage = () => {
     return (
       <div className="homepage-container">

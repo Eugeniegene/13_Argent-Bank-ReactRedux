@@ -14,10 +14,63 @@
     padding-top: 25px;
 }
 
-.editButton{
+.editname{
     font-weight: 700;
     padding: 10px;
     background-color: #00bc77;
     border-color: #00bc77;
     color: white;
 }
+
+/*FORM AREA*/
+
+.user-form{
+    padding-top: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+.user-form .inputContainer{
+    justify-content: space-between;
+    width: 450px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.user-form-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 350px;
+    padding-bottom: 25px;
+}
+ 
+.user-form-buttons button {
+    width: 150px;
+}
+
+@media screen and (max-width: 560px) {
+    .accountCentralBackground {
+        height: 900px;
+    }
+
+    .user-form .inputContainer{
+        display:block;
+        width: 75%;
+    }
+
+    .user-form-buttons {
+        display: block;
+        width: 75%;
+    }
+
+    .user-form-buttons button{
+        width: 85%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+        margin-bottom : 10px;
+    }
+  }
