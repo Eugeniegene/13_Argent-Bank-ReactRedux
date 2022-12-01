@@ -1,6 +1,6 @@
 import React from "react"
 import HeadBanner from "../../components/Homepage-HeadBanner/head-banner"
-import CentralContentData from "../../components/Hompage-CentralContent/centralContent"
+import CentralContentData from "../../components/Homepage-CentralContent/centralContent"
 
 import chatIcon from "../../assets/icon-livechat.png"
 import moneyIcon from "../../assets/icon-money.png"
