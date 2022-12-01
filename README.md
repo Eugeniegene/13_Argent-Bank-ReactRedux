@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# ArgentBank - EugenieGene
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projet 13 -  Utilisez une API pour un compte utilisateur bancaire avec React
 
-## Available Scripts
+## Technologies used
 
-In the project directory, you can run:
+- React v.18
+- React Router
+- CSS 3 
+- React Redux
 
-### `npm start`
+## Ressources provided : 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Wireframes
+![image](https://user-images.githubusercontent.com/97299297/204765264-b585e7f6-a203-497b-a688-086d7558d2d3.png)
+![image](https://user-images.githubusercontent.com/97299297/204765528-5dcccb2e-fc98-44f4-a046-a29955fb8da5.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Static code 
 
-### `npm test`
+The static code is available here : https://github.com/Eugeniegene/P13-Bank-API-07112022/tree/master/designs
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to install ? 
 
-### `npm run build`
+### Prequisites 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- npm 8.19.2
+- NoneJs 18.11.0
+- Code editor
+- MongoDB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installing and lauching Back-End files 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the repository of SportSee Back-End:
+```bash
+git clone https://github.com/Eugeniegene/P13-Bank-API-07112022
+``` 
+When opening the back-end repository :
+```bash
+npm install
+```
+Launch back-end on port 3001 :
+```bash
+npm run server
+```
 
-### `npm run eject`
+### Populated Database Data
+#### Tony Stark
+- First Name: Tony
+- Last Name: Stark
+- Email: tony@stark.com
+- Password: password123
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Steve Rogers
+- First Name: Steve,
+- Last Name: Rogers,
+- Email: steve@rogers.com,
+- Password: password456
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Available Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project contains three general endpoints. Their use is limited to the user's status (connected or not)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- http://localhost:3001/api/v1/user/ => baseURL for the project
+- http://localhost:3001/api/v1/user/login => url to get to the login page
+- http://localhost:3001/api/v1/user/profile => url to get to the profile page 
 
-## Learn More
+### IMPORTANT NOTICE !
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As requested, the profile page will not be accessible if the user is not connected. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Installing and launching Front-end
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone the repository of SportSee Front-End:
+```bash
+git clone https://github.com/Eugeniegene/P13-Argent-Bank-Front---React-Redux
+```
+Then, inside the repository, install dependencies:
+```bash
+npm install
+```
+Launch Front-End on port 3000:
+```bash
+npm start
+```
+Front-End is now rendered at URL http://localhost:3000
