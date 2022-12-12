@@ -56,8 +56,6 @@ import axios from 'axios'
 		{ token },
 		config
 	  )
-
-	  console.log(data)
 	  dispatch({ type: USER_PROFILE_SUCCESS, payload: data, token: token })
 	} catch (error) {
 	  dispatch({
@@ -84,16 +82,12 @@ import axios from 'axios'
 			Authorization: `Bearer ${token}`,
 		  },
 		}
-		console.log(token)
-		console.log(" "+editFirstName + editLastName + "edit ")
 		const { data } = await axios.put(
 		  'http://localhost:3001/api/v1/user/profile',
 		  { firstName: editFirstName, lastName: editLastName },
 		  config
 		)
 		dispatch({ type: USER_PROFILE_UPDATE, payload: data, token: token })
-		console.log('start')
-		console.log(token)
 	  } catch (error) {
 		dispatch({
 		  type: USER_PROFILE_FAIL,
